@@ -1,0 +1,17 @@
+package templates
+
+templ Index(title string) {
+	@Layout("Home") {
+		<div class="bg-white shadow rounded-lg p-6">
+			<h1 class="text-3xl font-bold mb-4">{ title }</h1>
+			<div hx-target="this" hx-swap="outerHTML">
+				<button
+					hx-post="/api/data"
+					class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+				>
+					Load Data
+				</button>
+			</div>
+		</div>
+	}
+}
